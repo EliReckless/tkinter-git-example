@@ -80,7 +80,30 @@ window.mainloop()
 
 ## Tkinter Listbox and Scrollbar
 
-### Source code example
+```
+import tkinter as tk
+
+window = tk.Tk()
+window.title("Listbox & Scrollbar example")
+window.geometry("280x50")
+
+lb = tk.Listbox(window)
+lb.insert(1, "Python")
+lb.insert(2, "Perl")
+lb.insert(3, "C")
+lb.insert(4, "PHP")
+lb.insert(5, "JSP")
+lb.insert(6, "Ruby")
+lb.pack(side = tk.LEFT, fill=tk.BOTH)
+
+sb = tk.Scrollbar(window)
+sb.pack(side=tk.RIGHT, fill=tk.BOTH)
+
+lb.config(yscrollcommand = sb.set)
+sb.config(command = lb.yview)
+
+window.mainloop()
+```
 
 ### Screenshot
 
